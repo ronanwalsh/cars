@@ -1,8 +1,8 @@
 #! /bin/bash
 #cars.sh
 #Ronan Walsh
-
-while [ "$NUM" != 3 ]
+NUM=0
+while [ "$NUM" -ne 3 ]
 do
 	echo "[1] Enter a car"
 	echo "[2] Display the list of cars"
@@ -18,12 +18,12 @@ do
 			echo "Enter the model of the car: "
 			read -r MODEL
 			NEW="${YEAR}:${MAKE}:${MODEL}"
-			echo "$NEW" >> my_old_cars.txt
+			echo "$NEW" >> my_old_cars.txt;;
 		"2")
 			sort my_old_cars.txt;;
-		"3')
+		"3")
 			echo "Goodbye.";;
-		+)
+		*)
 			echo "Error. Try again.";;
 	 esac
 done
